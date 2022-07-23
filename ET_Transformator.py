@@ -24,30 +24,39 @@ break2 = st.number_input("Longer breakpoint", min_value = 7, max_value = 15, val
 uploaded_file = st.file_uploader("Choose ET files", accept_multiple_files = True)
 
 if uploaded_file:
-  #df = pd.read_csv(uploaded_file)
-  et_raw = pd.concat([pd.read_csv(f, sep=';', keep_default_na=False) for f in uploaded_file])
-  #et_raw = st.file_uploader("Choose a file")
+	#df = pd.read_csv(uploaded_file)
+	et_raw = pd.concat([pd.read_csv(f, sep=';', keep_default_na=False) for f in uploaded_file])
+	#et_raw = st.file_uploader("Choose a file")
 
-  st.subheader('DataFrame')
-  st.write(et_raw)
-  st.subheader('Descriptive Statistics')
-  st.write(et_raw.describe())
+	#cell derivation from the project name
+	et_raw['cell_id'] = et_raw['cell_id'].astype(str)
+	et_raw['cell_num'] = et_raw.cell_id.str.extract(r'(cell\d+)')
+	et_raw['cell_num'] = et_raw['cell_num'].astype(str)
+	et_raw['cell'] = et_raw.cell_num.str.extract(r'(\d+)')
+
+	#breakpoint columns calc
+	et_raw['break1'] = np.where(et_raw['time_stamp'] == break1, 1, 0)
+	et_raw['break2'] = np.where(et_raw['time_stamp'] == break2, 1, 0)
+
+	st.subheader('DataFrame')
+	st.write(et_raw)
+	st.subheader('Descriptive Statistics')
+	st.write(et_raw.describe())
   
-  @st.cache
-  def convert_df(df):
-    return df.to_csv().encode('utf-8')
+	@st.cache
+	def convert_df(df):
+    	return df.to_csv().encode('utf-8')
 
 
-  csv = convert_df(et_raw)
+  	csv = convert_df(et_raw)
 
-  st.download_button(
-     "Press to Download",
-     csv,
-     "file.csv",
-     "text/csv",
-     key='download-csv'
-  )
+  	st.download_button(
+		"Press to Download",
+		csv,
+		"file.csv",
+		"text/csv",
+		key='download-csv'
+  	)
+  	
 else:
   st.info('☝️ Upload a CSV file')
-  
-
