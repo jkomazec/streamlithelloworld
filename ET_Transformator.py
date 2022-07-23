@@ -50,11 +50,13 @@ if uploaded_file:
 
 
   csv = convert_df(et_raw)
+  
+  name = "ET Transform for Dapresy " + str(break1) + "s " + str(break2) + "s .csv"
 
   st.download_button(
      "Press to Download",
      csv,
-     "file.csv",
+     name,
      "text/csv",
      key='download-csv'
   )
