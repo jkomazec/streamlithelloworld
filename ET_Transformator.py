@@ -7,7 +7,7 @@ st.subheader('Prerequisites')
 #st.markdown('As described in the Scribehow tutorial, please download all the necessary files from the Gazeviewer by selecting the following options:')
 #st.image("https://github.com/jkomazec/streamlithelloworld/blob/main/gv_options.png")
 htp5= 'https://raw.githubusercontent.com/jkomazec/streamlithelloworld/main/gv_options.png'
-st.image(htp5, caption= 'Gazeviewer options', width=300)
+st.image(htp5, caption= 'Gazeviewer options', width=1000)
 
 uploaded_file = st.file_uploader("Choose ET files", accept_multiple_files = True)
 
