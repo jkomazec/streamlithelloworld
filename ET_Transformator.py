@@ -40,7 +40,7 @@ if uploaded_file:
 
   st.subheader('DataFrame')
   st.write(et_raw)
-  st.subheader('Descriptive Statistics')
+  st.subheader('Your downloads: ')
   #st.write(et_raw.describe())
 
   
