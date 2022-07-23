@@ -35,8 +35,8 @@ if uploaded_file:
   et_raw['cell'] = et_raw.cell_num.str.extract(r'(\d+)')
 
   #breakpoint column calc
-  et_raw['break1'] = np.where(et_raw['time_stamp'] == break1, 1, 0)
-  et_raw['break2'] = np.where(et_raw['time_stamp'] == break2, 1, 0)
+  et_raw['break1'] = np.where(et_raw['time_stamp'] == break1, str(break1) + "s", 0)
+  et_raw['break2'] = np.where(et_raw['time_stamp'] == break2, str(break2) + "s", 0)
 
   st.subheader('DataFrame')
   st.write(et_raw)
