@@ -25,10 +25,8 @@ if uploaded_file:
   st.write(et_raw)
   st.subheader('Descriptive Statistics')
   st.write(et_raw.describe())
-else:
-  st.info('☝️ Upload a CSV file')
   
-@st.cache
+  @st.cache
 def convert_df(df):
    return df.to_csv().encode('utf-8')
 
@@ -42,3 +40,7 @@ st.download_button(
    "text/csv",
    key='download-csv'
 )
+else:
+  st.info('☝️ Upload a CSV file')
+  
+
