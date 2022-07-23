@@ -61,4 +61,4 @@ if uploaded_file:
      key='download-csv'
   )
 else:
-  st.info('☝️ Upload a CSV file')
+  st.info('☝️ Upload GV export CSV files')
