@@ -11,7 +11,7 @@ st.markdown("As described in the Scribehow tutorial, please download all the nec
 htp5= 'https://raw.githubusercontent.com/jkomazec/streamlithelloworld/main/gv_options.png'
 st.image(htp5, caption= 'Gazeviewer options', width=1000)
 
-st.markdown("Please import your '''.csv*''' files. Please import either **SHELF** or **STANDALONE** files per session.")
+st.markdown("Please import your `.csv` files. Please import either **SHELF** or **STANDALONE** files per session.")
 
 uploaded_file = st.file_uploader("Choose ET files", accept_multiple_files = True)
 
