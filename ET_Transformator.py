@@ -18,8 +18,8 @@ st.subheader('Enter the cutoff seconds')
 st.markdown("Standalone: 3 and 7")
 st.markdown("Shelf:      5 and 10")
 
-break1 = st.number_input(break1, min_value = 1, max_value = 15, value = 3, step = 1)
-break2 = st.number_input(break2, min_value = 7, max_value = 15, value = 7, step = 1)
+break1 = st.number_input("Shorter breakpoint", min_value = 1, max_value = 15, value = 3, step = 1)
+break2 = st.number_input("Longer breakpoint", min_value = 7, max_value = 15, value = 7, step = 1)
 
 uploaded_file = st.file_uploader("Choose ET files", accept_multiple_files = True)
 
