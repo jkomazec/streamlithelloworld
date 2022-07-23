@@ -39,9 +39,11 @@ if uploaded_file:
   value_break2 = str(break2) + "s"
   et_raw['break1'] = np.where(et_raw['time_stamp'] == break1, value_break1, 0)
   et_raw['break2'] = np.where(et_raw['time_stamp'] == break2, value_break2, 0)
+  
+  et_fin = et_raw.loc[et_raw['break1'] == value_break1 or et_raw['break2'] == value_break2]
 
   st.subheader('DataFrame')
-  st.write(et_raw)
+  st.write(et_fin)
   st.subheader('Your downloads: ')
   #st.write(et_raw.describe())
 
@@ -51,7 +53,7 @@ if uploaded_file:
     return df.to_csv().encode('utf-8')
 
 
-  csv = convert_df(et_raw)
+  csv = convert_df(et_fin)
   
   name = "ET Transform for Dapresy " + str(break1) + "s " + str(break2) + "s .csv"
 
