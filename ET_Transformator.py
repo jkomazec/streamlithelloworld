@@ -46,7 +46,7 @@ if uploaded_file:
   
   @st.cache
   def convert_df(df):
-    return df.to_csv().encode('utf-8')
+    return df.to_excel().encode('utf-8')
 
 
   csv = convert_df(et_raw)
