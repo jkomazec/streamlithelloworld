@@ -5,7 +5,7 @@ st.title('Eye tracking raw export transformator')
 
 st.subheader('Prerequisites')
 st.markdown('As described in the Scribehow tutorial, please download all the necessary files from the Gazeviewer by selecting the following options:')
-st.image("gv_options.png")
+st.image("https://github.com/jkomazec/streamlithelloworld/blob/main/gv_options.png")
 
 
 uploaded_file = st.file_uploader("Choose ET files", accept_multiple_files = True)
