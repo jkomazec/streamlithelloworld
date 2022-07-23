@@ -4,6 +4,8 @@ import pandas as pd
 st.title('Eye tracking raw export transformator')
 
 st.subheader('Prerequisites')
+
+st.markdown("Export from Gazeviewer is not possible until you import the zones. Upon importing the zones, you'll have the **Export** button.")
 st.markdown("As described in the Scribehow tutorial, please download all the necessary files from the Gazeviewer by selecting the following options:")
 #st.image("https://github.com/jkomazec/streamlithelloworld/blob/main/gv_options.png")
 htp5= 'https://raw.githubusercontent.com/jkomazec/streamlithelloworld/main/gv_options.png'
