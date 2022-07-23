@@ -1,9 +1,13 @@
 import streamlit as st
 import pandas as pd
 
-st.title('st.file_uploader')
+st.title('Eye tracking raw export transformator')
 
-st.subheader('Input CSV')
+st.subheader('Prerequisites')
+st.markdown('As described in the Scribehow tutorial, please download all the necessary files from the Gazeviewer by selecting the following options:')
+st.image("gv_options.png")
+
+
 uploaded_file = st.file_uploader("Choose ET files", accept_multiple_files = True)
 
 if uploaded_file:
