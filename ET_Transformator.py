@@ -40,7 +40,7 @@ if uploaded_file:
   et_raw['break1'] = np.where(et_raw['time_stamp'] == break1, value_break1, 0)
   et_raw['break2'] = np.where(et_raw['time_stamp'] == break2, value_break2, 0)
   
-  et_fin = et_raw.loc[et_raw['break1'] == value_break1 or et_raw['break2'] == value_break2]
+  et_fin = et_raw.loc[(et_raw['break1'] == value_break1) or (et_raw['break2'] == value_break2)]
 
   st.subheader('DataFrame')
   st.write(et_fin)
