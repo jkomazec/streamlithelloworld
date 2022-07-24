@@ -42,9 +42,7 @@ if uploaded_file:
   
   et_fin = et_raw.loc[(et_raw['break1'] == value_break1) | (et_raw['break2'] == value_break2)]
 
-  st.subheader('DataFrame')
-  st.write(et_fin)
-  st.subheader('Your downloads: ')
+
   #st.write(et_raw.describe())
 
   
@@ -66,5 +64,11 @@ if uploaded_file:
      "text/csv",
      key='download-csv'
   )
+  
+  st.subheader('DataFrame')
+  st.write(et_fin)
+  st.subheader('Your downloads: ')
+  
+  
 else:
   st.write('☝️ Upload GV export CSV files')
