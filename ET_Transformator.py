@@ -56,6 +56,8 @@ if uploaded_file:
   csv = convert_df(et_fin)
   
   name = "ET Transform for Dapresy " + str(break1) + "s " + str(break2) + "s .csv"
+  
+  st.info("Your file is ready for download")
 
   st.download_button(
      "Press to Download",
@@ -65,4 +67,4 @@ if uploaded_file:
      key='download-csv'
   )
 else:
-  st.info('☝️ Upload GV export CSV files')
+  st.write('☝️ Upload GV export CSV files')
