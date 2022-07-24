@@ -56,6 +56,8 @@ if uploaded_file:
   name = "ET Transform for Dapresy " + str(break1) + "s " + str(break2) + "s .csv"
   
   st.info("Your file is ready for download")
+  
+  st.subheader('Your downloads: ')
 
   st.download_button(
      "Press to Download",
@@ -65,9 +67,9 @@ if uploaded_file:
      key='download-csv'
   )
   
-  st.subheader('DataFrame')
+  st.subheader('ET for Dapresy database overview')
   st.write(et_fin)
-  st.subheader('Your downloads: ')
+  
   
   
 else:
