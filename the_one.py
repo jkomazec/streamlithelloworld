@@ -12,7 +12,7 @@ images = st.file_uploader("Upload JPGs", type="jpg")
 if uploaded_db:
 	st.write("Brao")
 
-	@st.cache
+#	@st.cache
 
 else:
 	st.info('Upload a database')
